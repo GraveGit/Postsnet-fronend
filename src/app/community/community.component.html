@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subreddit Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #dae0e6;
+        }
+        .post {
+            background-color: #fff;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .post-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .post-content {
+            margin-bottom: 10px;
+        }
+        .post-actions button {
+            margin-right: 10px;
+        }
+        .sidebar {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <a class="navbar-brand" href="#">r/SubredditName</a>
+    </nav>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="post">
+                    <div class="post-title">Post Title 1</div>
+                    <div class="post-content">This is the content of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div class="post-actions">
+                        <button class="btn btn-outline-primary btn-sm">Like</button>
+                        <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                    </div>
+                    <div class="post-comments mt-3">
+                        <div class="comment">
+                            <strong>User1</strong>: Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>User2</strong>: I agree.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-title">Post Title 2</div>
+                    <div class="post-content">Another post content here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div class="post-actions">
+                        <button class="btn btn-outline-primary btn-sm">Like</button>
+                        <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                    </div>
+                    <div class="post-comments mt-3">
+                        <div class="comment">
+                            <strong>User3</strong>: Interesting!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h5>About Community</h5>
+                    <p>This is a description of the community. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <hr>
+                    <p><strong>1.2k</strong> Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

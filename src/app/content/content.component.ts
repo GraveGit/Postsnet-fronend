@@ -6,20 +6,34 @@ import { UserService } from '../services/user-service.service';
 import { BootstrapOptions } from '@angular/core';
 import { response } from 'express';
 import { routes } from '../app.routes';
+import { ButtonsComponent } from '../buttons/buttons.component';
+import { WelcomeContentComponent } from '../welcome-content/welcome-content.component';
+import { NgIf } from '@angular/common';
+import { AuthPageComponent } from "../auth-page/auth-page.component";
 
 @Component({
   selector: 'app-content',
   standalone: true,
   imports: [
     MainwindowComponent,
-    LoginPageComponent],
+    LoginPageComponent,
+    ButtonsComponent,
+    WelcomeContentComponent,
+    NgIf,
+    AuthPageComponent
+],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
 
+  componentToShow: string = "login";
 
   constructor(private userService: UserService, private router: Router) {}
+
+  showComponent(componentToShow: string): void {
+    this.componentToShow = componentToShow;
+  }
 
   onLogin(input: any): void {
     this.userService.request(
@@ -32,7 +46,7 @@ export class ContentComponent {
       }
     ).then(response => {
         this.userService.setAuthToken(response.data.token);
-        this.router.navigate(["/community"])
+        this.componentToShow = "communities";
     });
 
   }
@@ -50,7 +64,7 @@ export class ContentComponent {
       }
     ).then(response => {
       this.userService.setAuthToken(response.data.token);
-      this.router.navigate(["/community"])
+      this.componentToShow = "messages";
   });
 
   }

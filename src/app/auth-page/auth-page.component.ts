@@ -22,11 +22,19 @@ export class AuthPageComponent{
 
       this.userService.request(
         "GET",
-        "/messages",
-        {}
-      ).then(
-        (response) => this.data = response.data
-      )
-    }
+        "api/v1/communities/getcom",
+        {}).then(
+          (response) => {
+              this.data = response.data;
+          }).catch(
+          (error) => {
+              if (error.response.status === 401) {
+                  this.userService.setAuthToken(null);
+              } else {
+                  this.data = error.response.code;
+              }
 
-}
+          }
+      );
+    }
+  }

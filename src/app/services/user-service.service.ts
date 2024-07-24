@@ -9,7 +9,9 @@ import axios, { Axios } from 'axios';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) {
+  private apiUrl = 'http://localhost:8080';
+
+  constructor() {
 
     axios.defaults.baseURL = "http://localhost:8080"
     axios.defaults.headers.post["Content-Type"] = "application/json"
@@ -32,7 +34,7 @@ export class UserService {
     let headers = {};
 
     if (this.getAuthToken() != null) {
-      headers = {"Authorization": "Bearer" + this.getAuthToken()}
+      headers = {"Authorization": "Bearer " + this.getAuthToken()}
     }
 
     return axios({

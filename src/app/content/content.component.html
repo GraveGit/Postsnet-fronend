@@ -1,4 +1,11 @@
 <div>
-  <app-login-page (onSubmitLoginEvent)="onLogin($event)"/>
-  <app-login-page (onSubmitRegisterEvent)="onRegister($event)"/>
-</div>>
+  <app-buttons
+    (loginEvent)="showComponent('login')"
+    (logoutEvent)="showComponent('welcome')"
+  />
+
+	<app-welcome-content *ngIf="componentToShow == 'welcome'"/>
+	<app-login-page *ngIf="componentToShow == 'login'" (onSubmitLoginEvent)="onLogin($event)" (onSubmitRegisterEvent)="onRegister($event)"/>
+	<app-auth-page *ngIf="componentToShow == 'messages'"/>
+
+</div>

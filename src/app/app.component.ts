@@ -9,6 +9,8 @@ import { NgFor, NgForOf } from '@angular/common';
 import { ContentComponent } from './content/content.component';
 import { MainwindowComponent } from './mainwindow/mainwindow.component';
 import { CommunityComponent } from './community/community.component';
+import { CommunityListComponent } from './community-list/community-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,9 @@ import { CommunityComponent } from './community/community.component';
     NgForOf,
     ContentComponent,
     MainwindowComponent,
-    CommunityComponent],
+    CommunityComponent,
+    CommunityListComponent,
+    HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -35,7 +39,7 @@ export class AppComponent{
   constructor(private router: Router) {}
 
   ngOnInit() {
-      this.router.navigate(['/content']);
+      //this.router.navigate(['/content']);
     }
 
 }
